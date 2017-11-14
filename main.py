@@ -19,34 +19,62 @@ elif randomNumber == 2:
 else:
     randomChoice = 'scissors'
 
-userChoice = input ("Choose 'rock' or 'paper' or 'scissors': ")    
+programContinuation = 'Y'
 
-while userChoice != 'rock' and userChoice != 'paper' and userChoice != 'scissors':
-    print ('Input error !!!')
-    print ('Please try again')
-    userChoice = input ("Choose 'rock' or 'paper' or 'scissors': ")   
+while programContinuation == 'Y' or programContinuation == 'y':
+    userChoice = input ("Choose 'rock' or 'paper' or 'scissors': ")
+    print()
 
+    while userChoice != 'rock' and userChoice != 'paper' and userChoice != 'scissors':
+        print ('Input error !!!')
+        print ('Please try again')
+        userChoice = input ("Choose 'rock' or 'paper' or 'scissors': ")
+        print()
+
+    else:
+        while userChoice == randomChoice:
+            print ('Computer also selected', userChoice)
+            print ('Please try again')
+            userChoice = input ("Choose 'rock' or 'paper' or 'scissors': ")
+            print()  
+        else:
+            if userChoice == 'paper' and randomChoice == 'rock':
+                print ('Computer selects', randomChoice)
+                print ('Paper wraps rock')
+                print ('You win !!!')
+                programContinuation = input ('Type "Y" to continue or "N" to quit the game: ')
+                print()
+            elif userChoice == 'paper' and randomChoice == 'scissors':
+                print ('Computer selects', randomChoice)
+                print ('Scissors cuts paper')
+                print ('Computer wins !!!')
+                programContinuation = input ('Type "Y" to continue or "N" to quit the game: ')
+                print()
+            elif userChoice == 'rock' and randomChoice == 'paper':
+                print ('Computer selects', randomChoice)
+                print ('Paper wraps rock')
+                print ('Computer wins !!!')
+                programContinuation = input ('Type "Y" to continue or "N" to quit the game: ')
+                print()
+            elif userChoice == 'rock' and randomChoice == 'scissors':
+                print ('Computer selects', randomChoice)
+                print ('Rock smashes scissors')
+                print ('You win !!!')
+                programContinuation = input ('Type "Y" to continue or "N" to quit the game: ')
+                print()
+            elif userChoice == 'scissors' and randomChoice == 'paper':
+                print ('Computer selects', randomChoice)
+                print ('Scissors cuts paper')
+                print ('You win !!!')
+                programContinuation = input ('Type "Y" to continue or "N" to quit the game: ')
+                print()
+            elif userChoice == 'scissors' and randomChoice == 'rock':
+                print ('Computer selects', randomChoice)
+                print ('Rock smashes scissors')
+                print ('Computer wins !!!')
+                programContinuation = input ('Type "Y" to continue or "N" to quit the game: ')
+                print()
 else:
-  while userChoice == randomChoice:
-      print ('Computer also selected', userChoice)
-      print ('Please try again')
-      userChoice = input ("Choose 'rock' or 'paper' or 'scissors': ")
-  else:
-      if userChoice == 'paper' and randomChoice == 'rock':
-          print ('Paper wraps rock')
-          print ('You win !!!')
-      elif userChoice == 'paper' and randomChoice == 'scissors':
-          print ('Scissors cuts paper')
-          print ('Computer wins !!!')
-      elif userChoice == 'rock' and randomChoice == 'paper':
-          print ('Paper wraps rock')
-          print ('Computer wins !!!')
-      elif userChoice == 'rock' and randomChoice == 'scissors':
-          print ('Rock smashes scissors')
-          print ('You win !!!')
-      elif userChoice == 'scissors' and randomChoice == 'paper':
-          print ('Scissors cuts paper')
-          print ('You win !!!')
-      elif userChoice == 'scissors' and randomChoice == 'rock':
-          print ('Rock smashes scissors')
-          print ('Computer wins !!!')      
+    print ('************************************************************')
+    print ('********************** End of the Game *********************')
+    print ('************************************************************')
