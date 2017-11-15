@@ -10,18 +10,18 @@ print ()
 print ("You can only select 3 options: 'rock', 'paper' or 'scissors'")
 print()
 
-randomNumber = random.randrange (1,4)
-
-if randomNumber == 1:
-    randomChoice = 'rock'
-elif randomNumber == 2:
-    randomChoice = 'paper'
-else:
-    randomChoice = 'scissors'
-
 programContinuation = 'Y'
 
 while programContinuation == 'Y' or programContinuation == 'y':
+    
+    randomNumber = random.randrange (1,4)
+    if randomNumber == 1:
+        randomChoice = 'rock'
+    elif randomNumber == 2:
+        randomChoice = 'paper'
+    else:
+        randomChoice = 'scissors'
+        
     userChoice = input ("Choose 'rock' or 'paper' or 'scissors': ")
     print()
 
@@ -35,6 +35,13 @@ while programContinuation == 'Y' or programContinuation == 'y':
         while userChoice == randomChoice:
             print ('Computer also selected', userChoice)
             print ('Please try again')
+            randomNumber = random.randrange (1,4)
+            if randomNumber == 1:
+                randomChoice = 'rock'
+            elif randomNumber == 2:
+                randomChoice = 'paper'
+            else:
+                randomChoice = 'scissors'       
             userChoice = input ("Choose 'rock' or 'paper' or 'scissors': ")
             print()  
         else:
